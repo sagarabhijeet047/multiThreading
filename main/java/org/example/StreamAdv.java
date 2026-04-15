@@ -23,5 +23,14 @@ public class StreamAdv {
                 .orElse(null);
 
         System.out.println("First non-repeating character: " + result);
+
+        List<Integer> numbers = Arrays.asList(12,1,454,512,12,584,4,3,53,58748,57,44);
+        int secondLargest = numbers.stream()
+                            .distinct()
+                            .sorted(Comparator.reverseOrder())
+                            .skip(1)
+                            .findFirst()
+                            .orElse(0);
+        System.out.println("Second largest: "+secondLargest);
     }
 }
